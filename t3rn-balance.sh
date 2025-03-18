@@ -15,7 +15,7 @@ func_balance () {
 	echo $value/10^18 | bc -l | awk '{printf "%.6f\n", $0}'
 }
 
-for i in "${wallet[0]}" ; do
+for i in "${wallet[@]}" ; do
 	echo "Checking balance for $i"
 	for network in "${rpc[@]}" ; do
 		echo $network
