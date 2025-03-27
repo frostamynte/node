@@ -1,6 +1,6 @@
 #!/bin/bash
 # Requires foundry curl -L https://foundry.paradigm.xyz | bash
-declare -a wallet=("0x2Ed8F2c6F399A6B30dc30d62561fBfB6B54a7F3e")
+declare -a wallet=("0x...")
 declare -a rpc=(
 	"https://api.zan.top/arb-sepolia"
 	"https://base-sepolia.drpc.org"
