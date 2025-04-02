@@ -1,14 +1,14 @@
 #!/bin/bash
 # Check for updates via Githup API and alert via Discord or email if version mismatch
 # Domain server binary lacks version functionality like hagall, using docker logs to grab version information instead of "docker exec -it sh ./ds version"
-# Tested on domain-server all in one.  
+# Tested on domain-server all in one.
 # Leave recipient or webhook URL blank to disable alert method
 declare -a gitRepo=("domain-server" "hagall") # which containers to check, takes one or two arguments
 declare -a localDocker
 declare -a smtpSettings=("msmtp" "") # Add recipient as second value, requires msmtp
 declare -a discordSettings=("Captain Hook" "") # Add webhook URL as second value
 
-func_installedVersion () { 
+func_installedVersion () {
     dockerID=$(docker ps | grep aukilabs/$1 | awk '{print $1}')
     echo -e "Container ID for $1 is: $dockerID\n"
     localDocker+=($1)
@@ -32,7 +32,7 @@ func_smtpAlert () {
 }
 
 for item in "${gitRepo[@]}" ; do
-	func_installedVersion $item
+    func_installedVersion $item
     func_gitCheck $item
 done
 
