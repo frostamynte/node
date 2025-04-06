@@ -1,6 +1,6 @@
 #!/bin/bash
 # Fill in email address or webhook URL in the second field of smtp or discord settings. Leave blank ("") to disable.
-declare -a smtpSettings=("msmtp" "") # requires package msmtp
+declare -a smtpSettings=("msmtp" "")
 declare -a discordSettings=("Captain Hook" "")
 repo="https://api.github.com/repos/dusk-network/rusk/releases/latest"
 
