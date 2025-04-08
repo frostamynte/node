@@ -57,7 +57,7 @@ if [[ "${array[0]}" == "domain-server" ]] || [[ "${array[1]}" == "domain-server"
         echo -e "DS local version is equal to Github version.\n"
     elif [[ "${ds[lver]}" != "${ds[gver]}" ]]; then
         echo -e "DS local version "${ds[lver]}" differs from Github version "${ds[gver]}" Alerting.\n"
-        func_alert "Auki domain-server mismatch"
+        func_alert "Auki domain-server version mismatch"
     fi
 else
     echo -e "Key domain-server is not found in the array.\n"
@@ -77,7 +77,7 @@ if [[ "${array[0]}" == "hagall" ]] || [[ "${array[1]}" == "hagall" ]]; then
         exit 0
     elif [[ "${hagall[lver]}" != "${hagall[gver]}" ]]; then
         echo -e "Hagall local version differs from Github version. Alerting.\n"
-        echo -e func_alert "Auki hagall mismatch"
+        echo -e func_alert "Auki hagall version mismatch"
     fi
 else
     echo -e "Key hagall is not found in the array.\n"
