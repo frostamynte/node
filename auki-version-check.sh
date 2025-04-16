@@ -4,8 +4,8 @@
 # Tested on domain-server all in one.
 # Leave SMTP recipient or webhook URL blank to disable alert method.
 
-declare -a smtpSettings=("msmtp" "")
-declare -a discordSettings=("Captain Hook" "")
+declare -a smtpSettings=("msmtp" "") # Requires package msmtp. Enter email recipient in the second field to enable alert.
+declare -a discordSettings=("Captain Hook" "") # Enter discord webhook URL in the second field to enable alert.
 declare -A ds
 declare -A hagall
 
