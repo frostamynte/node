@@ -61,8 +61,8 @@ func_alert () {
 
 # check installed and github version
 if [ -x "$(command -v hostd version)" ]; then
-    localVersion=$(hostd version | grep hostd | tail -n 1 | awk '{print $2}')
-    gitVersion=$(curl -s $gitUrl | grep -oP '(?<="tag_name":).*'| tr -d '",' | tr -s "[:space:]" | cut -d ' ' -f2)
+    localVersion=$(hostd version | grep '^hostd v' | awk '{print $2}')
+    gitVersion=$(curl -s $gitUrl | jq -r .tag_name)
     func_echo info "Installed version is: $localVersion"
     func_echo info "Github version is: $gitVersion"
     if [[ "$localVersion" == "$gitVersion" ]]; then
